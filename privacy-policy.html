@@ -37,6 +37,12 @@
     th {
       background-color: #f5f5f5;
     }
+    .highlight-box {
+      background-color: #f0f7f4;
+      border-left: 4px solid #0a5c36;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
   </style>
 </head>
 <body>
@@ -52,8 +58,10 @@
 
 <h2>Data Controller</h2>
 <p>
-Bawabat Al Hajj is operated by the app developer.  
-For any privacy-related requests, contact us using the details below.
+Bawabat Al Hajj is operated by an individual developer acting as the Data Controller for personal data processing.
+Firebase Cloud Messaging (Google LLC) acts as a Data Processor under our instructions. For details, see
+<a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy and Security</a>.
+For any privacy-related requests, contact us using the details in Section 15 below.
 </p>
 
 <hr>
@@ -62,7 +70,8 @@ For any privacy-related requests, contact us using the details below.
 <p>
 Welcome to <strong>Bawabat Al Hajj</strong> ("the App", "we", "our", or "us").
 We are committed to protecting your personal data and your privacy rights.
-This Privacy Policy explains how we collect, use, store, and protect your information.
+This Privacy Policy explains how we collect, use, store, and protect your information
+when you use our application on Android devices.
 </p>
 
 <hr>
@@ -77,160 +86,282 @@ in managing their journey, group data, training, and services.
 
 <h2>2. Information We Collect</h2>
 
-<h3>2.1 Information You Provide</h3>
+<h3>2.1 Information You Provide Directly</h3>
 <ul>
   <li>Full name</li>
   <li>Email address</li>
   <li>Phone number</li>
-  <li>Password (securely hashed)</li>
-  <li>National ID / Saudi ID (if applicable)</li>
+  <li>Password (securely hashed — never stored in plain text)</li>
+  <li>National ID / Saudi ID (where applicable — treated as sensitive data)</li>
   <li>Pilgrim and travel group data</li>
+  <li>Images or photos you voluntarily attach when submitting complaints or support requests</li>
 </ul>
 
-<h3>2.2 Automatically Collected</h3>
+<h3>2.2 Automatically Collected Data</h3>
 <ul>
   <li>Device information (model, OS version)</li>
   <li>App version</li>
-  <li>Firebase Cloud Messaging token (for notifications only)</li>
-  <li>Location data (only with your permission)</li>
+  <li>Firebase Cloud Messaging (FCM) token — used for push notifications only</li>
+  <li><strong>Approximate location</strong> (coarse GPS/network location) — used only in real-time for prayer time calculation and Qibla direction. This data is <strong>not stored, not transmitted to our servers, and not shared</strong>.</li>
 </ul>
 
-<h3>2.3 We Do NOT Collect</h3>
+<h3>2.3 Data We Do NOT Collect</h3>
 <ul>
-  <li>No advertising or ad tracking</li>
-  <li>No behavioral analytics SDKs (e.g., Firebase Analytics)</li>
+  <li>No advertising IDs or ad tracking</li>
+  <li>No analytics SDKs (we do not use Firebase Analytics, Google Analytics, or similar tracking tools)</li>
   <li>No biometric data</li>
-  <li>No payment or financial data</li>
+  <li>No payment or financial information</li>
+  <li>No precise (fine) GPS location</li>
+  <li>No contacts, call logs, or SMS data</li>
 </ul>
 
 <hr>
 
 <h2>3. How We Use Your Information</h2>
-<ul>
-  <li>Account creation and authentication</li>
-  <li>Displaying pilgrimage-related information</li>
-  <li>Prayer time calculation</li>
-  <li>Qibla direction</li>
-  <li>Push notifications</li>
-  <li>Complaint handling and support</li>
-</ul>
+
+<table>
+  <tr>
+    <th>Data Type</th>
+    <th>Purpose</th>
+    <th>Legal Basis (GDPR)</th>
+  </tr>
+  <tr>
+    <td>Name, Email, Password</td>
+    <td>Account creation and authentication</td>
+    <td>Contractual necessity</td>
+  </tr>
+  <tr>
+    <td>Phone, National ID</td>
+    <td>Pilgrim identity and group management</td>
+    <td>Contractual necessity / Legitimate interest</td>
+  </tr>
+  <tr>
+    <td>Approximate location</td>
+    <td>Prayer time calculation, Qibla direction (real-time only)</td>
+    <td>Consent (permission granted by you)</td>
+  </tr>
+  <tr>
+    <td>FCM Token</td>
+    <td>Delivering push notifications</td>
+    <td>Legitimate interest / Consent</td>
+  </tr>
+  <tr>
+    <td>Photos / Images</td>
+    <td>Attaching images to complaint and support requests</td>
+    <td>Consent (you initiate the upload)</td>
+  </tr>
+  <tr>
+    <td>Device info / App version</td>
+    <td>Technical support and compatibility</td>
+    <td>Legitimate interest</td>
+  </tr>
+</table>
 
 <hr>
 
-<h2>4. Data Storage and Security</h2>
+<h2>4. Data Storage, Retention, and Security</h2>
 
-<h3>On Device</h3>
+<h3>Retention Periods</h3>
 <ul>
-  <li>Secure storage (Android Keystore / iOS Keychain)</li>
-  <li>Local caching using SharedPreferences</li>
+  <li><strong>Account data:</strong> Retained while your account is active. Upon deletion request, data is removed within 30 days unless legal retention is required.</li>
+  <li><strong>Location data:</strong> Never stored — used only in real-time on-device.</li>
+  <li><strong>Complaint images:</strong> Retained while the complaint is open; deleted after resolution or within 90 days.</li>
+  <li><strong>FCM tokens:</strong> Refreshed automatically by Firebase; not stored beyond active session needs.</li>
 </ul>
 
-<h3>On Servers</h3>
+<h3>On-Device Storage</h3>
 <ul>
-  <li>Encrypted HTTPS communication</li>
-  <li>Hashed passwords (never stored in plain text)</li>
-  <li>Access-controlled databases</li>
+  <li>Credentials stored in Android Keystore</li>
+  <li>App preferences cached locally using SharedPreferences (no sensitive personal data)</li>
+</ul>
+
+<h3>Server-Side Security</h3>
+<ul>
+  <li>All communications use encrypted HTTPS (TLS)</li>
+  <li>Passwords are hashed before storage — never stored in plain text</li>
+  <li>Databases are access-controlled and restricted to authorized personnel</li>
 </ul>
 
 <hr>
 
 <h2>5. Data Sharing</h2>
 <ul>
-  <li>With your Hajj group or travel office (for operational purposes only)</li>
-  <li>Firebase Cloud Messaging (Google) for push notifications only</li>
-  <li>Legal authorities if required by law</li>
+  <li><strong>Your Hajj group / travel office:</strong> Operational data shared as needed to manage your pilgrimage group.</li>
+  <li><strong>Firebase Cloud Messaging (Google LLC):</strong> Your FCM device token is shared with Firebase solely to deliver push notifications. Firebase does not use this for advertising or profiling.</li>
+  <li><strong>Legal authorities:</strong> We may disclose data if required by applicable law or court order.</li>
 </ul>
 
-<p><strong>We do NOT sell or share your personal data with advertisers or data brokers.</strong></p>
+<div class="highlight-box">
+  <strong>We do NOT sell, rent, or share your personal data with advertisers, data brokers, or any third parties for commercial purposes.</strong>
+</div>
 
 <hr>
 
-<h2>6. Your Rights</h2>
+<h2>6. Third-Party Services</h2>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Purpose</th>
+    <th>Privacy Policy</th>
+  </tr>
+  <tr>
+    <td>Firebase Cloud Messaging (Google)</td>
+    <td>Push notifications only</td>
+    <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
+  </tr>
+  <tr>
+    <td>YouTube Player (Google)</td>
+    <td>In-app video playback</td>
+    <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
+  </tr>
+  <tr>
+    <td>Currency API (fxapi.app)</td>
+    <td>Live exchange rate data</td>
+    <td>No personal data is sent to this service</td>
+  </tr>
+</table>
+
+<p>We do not control the data practices of these third-party services. We encourage you to review their privacy policies.</p>
+
+<hr>
+
+<h2>7. Your Rights</h2>
+<p>Depending on your location, you may have the following rights regarding your personal data:</p>
 <ul>
-  <li>Access your personal data</li>
-  <li>Update or correct your information</li>
-  <li>Request deletion of your account</li>
-  <li>Control app permissions anytime via device settings</li>
+  <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+  <li><strong>Correction:</strong> Update or correct inaccurate information</li>
+  <li><strong>Deletion:</strong> Request permanent deletion of your account and associated data</li>
+  <li><strong>Restriction:</strong> Request that we limit processing of your data</li>
+  <li><strong>Portability:</strong> Request your data in a machine-readable format (GDPR users)</li>
+  <li><strong>Withdraw Consent:</strong> You may revoke permissions at any time via your device settings (location, camera, notifications)</li>
+  <li><strong>Opt-out of sale (CCPA):</strong> We do not sell personal data. No opt-out mechanism is needed.</li>
 </ul>
 
+<p>To exercise any of these rights, contact us at <a href="mailto:developer@syrianhajj.org">developer@syrianhajj.org</a>.</p>
+
 <hr>
 
-<h2>7. Data Deletion</h2>
+<h2>8. Account and Data Deletion</h2>
 <p>
-You may request deletion of your account and associated data at any time by contacting us.
-We will process deletion requests within a reasonable timeframe, unless retention is required by law.
+You may request the deletion of your account and all associated personal data at any time.
 </p>
-
-<hr>
-
-<h2>8. Children's Privacy</h2>
-<p>
-We do not knowingly collect data from children under the age of 13.
-</p>
-
-<hr>
-
-<h2>9. International Data Transfers</h2>
-<p>
-Your data may be processed outside your country. We ensure appropriate safeguards are in place in accordance with applicable data protection laws (including GDPR where applicable).
-</p>
-
-<hr>
-
-<h2>10. Third-Party Services</h2>
 <ul>
-  <li>Firebase Cloud Messaging (notifications only)</li>
-  <li>YouTube Player (video playback)</li>
-  <li>Currency API (fxapi.app)</li>
+  <li><strong>In-App:</strong> Go to <em>Settings → Account → Delete Account</em></li>
+  <li><strong>By Email:</strong> Send a deletion request to <a href="mailto:developer@syrianhajj.org">developer@syrianhajj.org</a> with the subject line "Account Deletion Request"</li>
 </ul>
+<p>
+We will process your request within <strong>30 days</strong>. Certain data may be retained longer if required by applicable law.
+After deletion, your data cannot be recovered.
+</p>
+
+<hr>
+
+<h2>9. Children's Privacy</h2>
+<p>
+Bawabat Al Hajj is intended for use by adults (18+) participating in Hajj pilgrimages.
+We do not knowingly collect personal data from children under the age of 13.
+If we become aware that a child under 13 has provided personal data, we will delete it promptly.
+</p>
+
+<hr>
+
+<h2>10. International Data Transfers</h2>
+<p>
+Your data may be processed in countries outside your own, including countries where Firebase infrastructure
+is hosted by Google LLC (United States). We ensure appropriate safeguards are in place including
+Standard Contractual Clauses (SCCs) where required under GDPR.
+</p>
 
 <hr>
 
 <h2>11. Cookies</h2>
 <p>
-We do not use cookies. We only use local storage for app functionality.
+The App does not use cookies. Local storage is used only for app functionality (e.g., login session, cached preferences)
+and does not include tracking technologies.
 </p>
 
 <hr>
 
-<h2>12. Permissions</h2>
+<h2>12. App Permissions</h2>
 
 <table>
   <tr>
     <th>Permission</th>
+    <th>Type</th>
     <th>Purpose</th>
+    <th>Data Stored?</th>
   </tr>
   <tr>
-    <td>Internet</td>
-    <td>API communication</td>
+    <td>INTERNET</td>
+    <td>Required</td>
+    <td>API communication with our servers</td>
+    <td>No</td>
   </tr>
   <tr>
-    <td>Location</td>
-    <td>Prayer times & Qibla direction</td>
+    <td>ACCESS_COARSE_LOCATION</td>
+    <td>Optional (user grant)</td>
+    <td>Prayer time calculation and Qibla direction (real-time only)</td>
+    <td>No</td>
   </tr>
   <tr>
-    <td>Camera</td>
-    <td>Attach images to complaints</td>
+    <td>CAMERA</td>
+    <td>Optional (user grant)</td>
+    <td>Capture images to attach to complaints or support requests</td>
+    <td>Only if you submit — uploaded to our server with your request</td>
   </tr>
   <tr>
-    <td>Notifications</td>
-    <td>Hajj updates and reminders</td>
+    <td>POST_NOTIFICATIONS</td>
+    <td>Optional (user grant)</td>
+    <td>Hajj updates, reminders, and group announcements</td>
+    <td>No (FCM token used, not stored long-term)</td>
+  </tr>
+  <tr>
+    <td>READ_EXTERNAL_STORAGE</td>
+    <td>Optional (user grant)</td>
+    <td>Select images from gallery to attach to complaints</td>
+    <td>Only if you submit — uploaded to our server with your request</td>
   </tr>
 </table>
 
+<p>You can revoke any optional permission at any time via <em>Android Settings → Apps → Bawabat Al Hajj → Permissions</em>.</p>
+
 <hr>
 
-<h2>13. Policy Updates</h2>
+<h2>13. Sensitive Data</h2>
 <p>
-We may update this Privacy Policy from time to time. Continued use of the App means acceptance of the updated version.
+Where required (e.g., Saudi Arabia pilgrim registration), we may collect National ID numbers.
+This data is:
+</p>
+<ul>
+  <li>Transmitted over encrypted HTTPS only</li>
+  <li>Stored in access-controlled databases</li>
+  <li>Used exclusively for pilgrim identity and group coordination</li>
+  <li>Never shared with third parties beyond your designated travel group or Hajj operator</li>
+</ul>
+
+<hr>
+
+<h2>14. Policy Updates</h2>
+<p>
+We may update this Privacy Policy from time to time. When we make material changes, we will notify you
+via in-app notification or email. The "Last Updated" date at the bottom of this page will reflect
+the most recent revision. Continued use of the App after changes take effect constitutes acceptance
+of the updated policy.
 </p>
 
 <hr>
 
-<h2>14. Contact Us</h2>
-<p>
-Email: developer@syrianhajj.org
-</p>
+<h2>15. Contact Us</h2>
+<p>For any privacy questions, requests, or concerns:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:developer@syrianhajj.org">developer@syrianhajj.org</a></li>
+  <li><strong>Subject line for deletion requests:</strong> "Account Deletion Request"</li>
+  <li><strong>Subject line for data access requests:</strong> "Data Access Request"</li>
+</ul>
+<p>We aim to respond to all privacy-related inquiries within <strong>14 business days</strong>.</p>
+
+<hr>
 
 <p><em>Last updated: April 30, 2026</em></p>
 
