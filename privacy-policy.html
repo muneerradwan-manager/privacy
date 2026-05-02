@@ -52,7 +52,7 @@
 <p><strong>Bawabat Al Hajj — بوابة الحاج</strong></p>
 
 <p><strong>Effective Date:</strong> April 16, 2026<br>
-<strong>Last Updated:</strong> April 30, 2026</p>
+<strong>Last Updated:</strong> May 2, 2026</p>
 
 <hr>
 
@@ -71,7 +71,7 @@ For any privacy-related requests, contact us using the details in Section 15 bel
 Welcome to <strong>Bawabat Al Hajj</strong> ("the App", "we", "our", or "us").
 We are committed to protecting your personal data and your privacy rights.
 This Privacy Policy explains how we collect, use, store, and protect your information
-when you use our application on Android devices.
+when you use our application on Android and iOS devices.
 </p>
 
 <hr>
@@ -93,8 +93,11 @@ in managing their journey, group data, training, and services.
   <li>Phone number</li>
   <li>Password (securely hashed — never stored in plain text)</li>
   <li>National ID / Saudi ID (where applicable — treated as sensitive data)</li>
+  <li>Gender</li>
+  <li>Pilgrim barcode / Hajj ID number</li>
   <li>Pilgrim and travel group data</li>
   <li>Images or photos you voluntarily attach when submitting complaints or support requests</li>
+  <li>Text content you submit in complaints, evaluations, or survey responses</li>
 </ul>
 
 <h3>2.2 Automatically Collected Data</h3>
@@ -102,7 +105,13 @@ in managing their journey, group data, training, and services.
   <li>Device information (model, OS version)</li>
   <li>App version</li>
   <li>Firebase Cloud Messaging (FCM) token — used for push notifications only</li>
-  <li><strong>Approximate location</strong> (coarse GPS/network location) — used only in real-time for prayer time calculation and Qibla direction. This data is <strong>not stored, not transmitted to our servers, and not shared</strong>.</li>
+  <li>Training progress, complaint status, and certificate completion status — stored as part of your account</li>
+  <li>
+    <strong>Location (precise and approximate)</strong> — used only in real-time for prayer time calculation
+    and Qibla direction. Location is processed on-device and is <strong>never stored on our servers
+    and never transmitted or shared</strong>. Only approximate location is cached locally on-device
+    for the current session and is not linked to your identity.
+  </li>
 </ul>
 
 <h3>2.3 Data We Do NOT Collect</h3>
@@ -111,8 +120,8 @@ in managing their journey, group data, training, and services.
   <li>No analytics SDKs (we do not use Firebase Analytics, Google Analytics, or similar tracking tools)</li>
   <li>No biometric data</li>
   <li>No payment or financial information</li>
-  <li>No precise (fine) GPS location</li>
   <li>No contacts, call logs, or SMS data</li>
+  <li>No audio recordings (audio playback for Quran is local only — no recording or upload)</li>
 </ul>
 
 <hr>
@@ -131,13 +140,13 @@ in managing their journey, group data, training, and services.
     <td>Contractual necessity</td>
   </tr>
   <tr>
-    <td>Phone, National ID</td>
-    <td>Pilgrim identity and group management</td>
-    <td>Contractual necessity / Legitimate interest</td>
+    <td>Phone, National ID, Gender, Barcode</td>
+    <td>Pilgrim identity and Hajj group management</td>
+    <td>Contractual necessity</td>
   </tr>
   <tr>
-    <td>Approximate location</td>
-    <td>Prayer time calculation, Qibla direction (real-time only)</td>
+    <td>Precise &amp; approximate location</td>
+    <td>Prayer time calculation, Qibla direction (real-time, on-device only)</td>
     <td>Consent (permission granted by you)</td>
   </tr>
   <tr>
@@ -149,6 +158,16 @@ in managing their journey, group data, training, and services.
     <td>Photos / Images</td>
     <td>Attaching images to complaint and support requests</td>
     <td>Consent (you initiate the upload)</td>
+  </tr>
+  <tr>
+    <td>Complaint text, evaluations</td>
+    <td>Processing support requests and service improvement</td>
+    <td>Contractual necessity / Legitimate interest</td>
+  </tr>
+  <tr>
+    <td>Training progress, certificate status</td>
+    <td>Tracking Hajj preparation progress within the app</td>
+    <td>Contractual necessity</td>
   </tr>
   <tr>
     <td>Device info / App version</td>
@@ -164,15 +183,17 @@ in managing their journey, group data, training, and services.
 <h3>Retention Periods</h3>
 <ul>
   <li><strong>Account data:</strong> Retained while your account is active. Upon deletion request, data is removed within 30 days unless legal retention is required.</li>
-  <li><strong>Location data:</strong> Never stored — used only in real-time on-device.</li>
-  <li><strong>Complaint images:</strong> Retained while the complaint is open; deleted after resolution or within 90 days.</li>
+  <li><strong>Location data:</strong> Never stored on servers — used only in real-time on-device.</li>
+  <li><strong>Complaint images and text:</strong> Retained while the complaint is open; deleted after resolution or within 90 days.</li>
+  <li><strong>Training and activity data:</strong> Retained while your account is active; deleted with account deletion.</li>
   <li><strong>FCM tokens:</strong> Refreshed automatically by Firebase; not stored beyond active session needs.</li>
 </ul>
 
 <h3>On-Device Storage</h3>
 <ul>
-  <li>Credentials stored in Android Keystore</li>
-  <li>App preferences cached locally using SharedPreferences (no sensitive personal data)</li>
+  <li>Credentials stored in Android Keystore / iOS Keychain</li>
+  <li>App preferences cached locally using SharedPreferences / UserDefaults (no sensitive personal data)</li>
+  <li>Certificates and images may be saved to your device's photo library with your permission (Android: <code>WRITE_EXTERNAL_STORAGE</code> / iOS: <code>NSPhotoLibraryAddUsageDescription</code>)</li>
 </ul>
 
 <h3>Server-Side Security</h3>
@@ -186,7 +207,7 @@ in managing their journey, group data, training, and services.
 
 <h2>5. Data Sharing</h2>
 <ul>
-  <li><strong>Your Hajj group / travel office:</strong> Operational data shared as needed to manage your pilgrimage group.</li>
+  <li><strong>Your Hajj group / travel office:</strong> Name, phone number, barcode, and group data shared as needed to manage your pilgrimage group.</li>
   <li><strong>Firebase Cloud Messaging (Google LLC):</strong> Your FCM device token is shared with Firebase solely to deliver push notifications. Firebase does not use this for advertising or profiling.</li>
   <li><strong>Legal authorities:</strong> We may disclose data if required by applicable law or court order.</li>
 </ul>
@@ -203,22 +224,26 @@ in managing their journey, group data, training, and services.
   <tr>
     <th>Service</th>
     <th>Purpose</th>
+    <th>Data Involved</th>
     <th>Privacy Policy</th>
   </tr>
   <tr>
     <td>Firebase Cloud Messaging (Google)</td>
     <td>Push notifications only</td>
+    <td>FCM device token</td>
     <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
   </tr>
   <tr>
     <td>YouTube Player (Google)</td>
     <td>In-app video playback</td>
+    <td>No personal data sent</td>
     <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
   </tr>
   <tr>
     <td>Currency API (fxapi.app)</td>
     <td>Live exchange rate data</td>
-    <td>No personal data is sent to this service</td>
+    <td>No personal data sent</td>
+    <td>No personal data involved</td>
   </tr>
 </table>
 
@@ -234,7 +259,7 @@ in managing their journey, group data, training, and services.
   <li><strong>Deletion:</strong> Request permanent deletion of your account and associated data</li>
   <li><strong>Restriction:</strong> Request that we limit processing of your data</li>
   <li><strong>Portability:</strong> Request your data in a machine-readable format (GDPR users)</li>
-  <li><strong>Withdraw Consent:</strong> You may revoke permissions at any time via your device settings (location, camera, notifications)</li>
+  <li><strong>Withdraw Consent:</strong> You may revoke permissions at any time via your device settings (location, camera, notifications, photo library)</li>
   <li><strong>Opt-out of sale (CCPA):</strong> We do not sell personal data. No opt-out mechanism is needed.</li>
 </ul>
 
@@ -288,55 +313,89 @@ and does not include tracking technologies.
 <table>
   <tr>
     <th>Permission</th>
+    <th>Platform</th>
     <th>Type</th>
     <th>Purpose</th>
-    <th>Data Stored?</th>
+    <th>Data Stored on Server?</th>
   </tr>
   <tr>
     <td>INTERNET</td>
+    <td>Android</td>
     <td>Required</td>
     <td>API communication with our servers</td>
     <td>No</td>
   </tr>
   <tr>
-    <td>ACCESS_COARSE_LOCATION</td>
+    <td>ACCESS_FINE_LOCATION</td>
+    <td>Android</td>
     <td>Optional (user grant)</td>
-    <td>Prayer time calculation and Qibla direction (real-time only)</td>
-    <td>No</td>
+    <td>Precise prayer time calculation and Qibla compass direction (real-time only)</td>
+    <td>No — on-device only</td>
   </tr>
   <tr>
-    <td>CAMERA</td>
+    <td>ACCESS_COARSE_LOCATION</td>
+    <td>Android</td>
     <td>Optional (user grant)</td>
-    <td>Capture images to attach to complaints or support requests</td>
-    <td>Only if you submit — uploaded to our server with your request</td>
+    <td>Approximate prayer time calculation when precise GPS is unavailable</td>
+    <td>No — on-device only</td>
+  </tr>
+  <tr>
+    <td>NSLocationWhenInUseUsageDescription</td>
+    <td>iOS</td>
+    <td>Optional (user grant)</td>
+    <td>Prayer time calculation and Qibla direction (real-time only)</td>
+    <td>No — on-device only</td>
+  </tr>
+  <tr>
+    <td>CAMERA / NSCameraUsageDescription</td>
+    <td>Android &amp; iOS</td>
+    <td>Optional (user grant)</td>
+    <td>Capture photos to attach to complaints or support requests</td>
+    <td>Only if you submit — uploaded with your complaint</td>
+  </tr>
+  <tr>
+    <td>READ_MEDIA_IMAGES / READ_EXTERNAL_STORAGE</td>
+    <td>Android</td>
+    <td>Optional (user grant)</td>
+    <td>Select existing images from gallery for complaint attachments</td>
+    <td>Only if you submit — uploaded with your complaint</td>
+  </tr>
+  <tr>
+    <td>NSPhotoLibraryUsageDescription</td>
+    <td>iOS</td>
+    <td>Optional (user grant)</td>
+    <td>Select existing images from photo library for complaint attachments</td>
+    <td>Only if you submit — uploaded with your complaint</td>
+  </tr>
+  <tr>
+    <td>WRITE_EXTERNAL_STORAGE / NSPhotoLibraryAddUsageDescription</td>
+    <td>Android &amp; iOS</td>
+    <td>Optional (user grant)</td>
+    <td>Save certificates and images to your device's photo library</td>
+    <td>No — saved locally to device only</td>
   </tr>
   <tr>
     <td>POST_NOTIFICATIONS</td>
+    <td>Android 13+</td>
     <td>Optional (user grant)</td>
     <td>Hajj updates, reminders, and group announcements</td>
-    <td>No (FCM token used, not stored long-term)</td>
-  </tr>
-  <tr>
-    <td>READ_EXTERNAL_STORAGE</td>
-    <td>Optional (user grant)</td>
-    <td>Select images from gallery to attach to complaints</td>
-    <td>Only if you submit — uploaded to our server with your request</td>
+    <td>No (FCM token used, refreshed automatically)</td>
   </tr>
 </table>
 
-<p>You can revoke any optional permission at any time via <em>Android Settings → Apps → Bawabat Al Hajj → Permissions</em>.</p>
+<p>You can revoke any optional permission at any time via your device settings.</p>
 
 <hr>
 
 <h2>13. Sensitive Data</h2>
 <p>
-Where required (e.g., Saudi Arabia pilgrim registration), we may collect National ID numbers.
+Where required (e.g., Saudi Arabia pilgrim registration), we may collect National ID numbers and pilgrim barcodes.
 This data is:
 </p>
 <ul>
   <li>Transmitted over encrypted HTTPS only</li>
   <li>Stored in access-controlled databases</li>
-  <li>Used exclusively for pilgrim identity and group coordination</li>
+  <li>Used exclusively for pilgrim identity and Hajj group coordination</li>
   <li>Never shared with third parties beyond your designated travel group or Hajj operator</li>
 </ul>
 
@@ -363,7 +422,7 @@ of the updated policy.
 
 <hr>
 
-<p><em>Last updated: April 30, 2026</em></p>
+<p><em>Last updated: May 2, 2026</em></p>
 
 </body>
 </html>
