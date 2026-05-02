@@ -269,16 +269,49 @@ in managing their journey, group data, training, and services.
 
 <h2>8. Account and Data Deletion</h2>
 <p>
-You may request the deletion of your account and all associated personal data at any time.
+You may request the deletion of your account and all associated personal data at any time
+using any of the following methods:
+</p>
+
+<h3>In-App (Recommended)</h3>
+<ol>
+  <li>Open the app and go to the <strong>More</strong> screen (bottom navigation)</li>
+  <li>Scroll to the bottom and tap <strong>"Remove Account"</strong></li>
+  <li>Confirm your decision in the dialog that appears</li>
+</ol>
+<p>
+Upon confirmation, the app will immediately:
 </p>
 <ul>
-  <li><strong>In-App:</strong> Go to <em>Settings → Account → Delete Account</em></li>
-  <li><strong>By Email:</strong> Send a deletion request to <a href="mailto:developer@syrianhajj.org">developer@syrianhajj.org</a> with the subject line "Account Deletion Request"</li>
+  <li>Unregister your device from push notifications</li>
+  <li>Send a deletion request to our servers (<code>DELETE /Auth/remove-account</code>)</li>
+  <li>Clear all locally cached data on your device</li>
 </ul>
+
+<h3>By Email</h3>
 <p>
-We will process your request within <strong>30 days</strong>. Certain data may be retained longer if required by applicable law.
-After deletion, your data cannot be recovered.
+Send a deletion request to
+<a href="mailto:developer@syrianhajj.org">developer@syrianhajj.org</a>
+with the subject line <strong>"Account Deletion Request"</strong>.
+We will process your request within <strong>30 days</strong>.
 </p>
+
+<h3>What Gets Deleted</h3>
+<table>
+  <tr><th>Data Type</th><th>Action on Deletion</th></tr>
+  <tr><td>Account credentials (email, password)</td><td>Permanently deleted</td></tr>
+  <tr><td>Personal info (name, phone, National ID, barcode)</td><td>Permanently deleted</td></tr>
+  <tr><td>Training progress &amp; certificates</td><td>Permanently deleted</td></tr>
+  <tr><td>Complaint history &amp; images</td><td>Permanently deleted</td></tr>
+  <tr><td>FCM notification token</td><td>Unregistered immediately</td></tr>
+  <tr><td>Local device cache</td><td>Cleared immediately on-device</td></tr>
+</table>
+
+<div class="highlight-box">
+  After deletion, your data cannot be recovered. Certain data may be retained longer
+  only if required by applicable law.
+</div>
+
 
 <hr>
 
