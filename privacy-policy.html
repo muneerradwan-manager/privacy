@@ -67,7 +67,7 @@
   <p><strong>Bawabat Al Hajj — بوابة الحاج</strong></p>
 
   <p><strong>Effective Date:</strong> April 16, 2026<br>
-    <strong>Last Updated:</strong> May 2, 2026
+    <strong>Last Updated:</strong> May 12, 2026
   </p>
 
   <hr>
@@ -124,23 +124,38 @@
     <li>Firebase Cloud Messaging (FCM) token — used for push notifications only</li>
     <li>Training progress, complaint status, and certificate completion status — stored as part of your account</li>
     <li>
-      <strong>Location (precise and approximate)</strong> — used only in real-time for prayer time calculation
-      and Qibla direction. Location is processed on-device and is <strong>never stored on our servers
-        and never transmitted or shared</strong>. Only approximate location is cached locally on-device
-      for the current session and is not linked to your identity.
+      <strong>Location (precise and approximate)</strong> — for prayer time calculation and Qibla direction,
+      your location is processed <strong>on-device only</strong> and is never transmitted to or stored on
+      our servers. Only approximate location is cached locally on-device for the current session and is
+      not linked to your identity.
+      <br><br>
+      <strong>Exception — "I'm Lost" / Send Help feature:</strong> if you explicitly tap the
+      <em>Send Help</em> button on the home screen, your precise GPS coordinates (latitude/longitude)
+      are transmitted <strong>once</strong> to our servers together with your pilgrim ID so that your
+      Hajj group / travel office can locate and assist you. No background location tracking is
+      performed at any time. You may dismiss the dialog to cancel before the location is sent.
     </li>
     <li>
-      <strong>Firebase Analytics (Google LLC)</strong> — aggregated, pseudonymous in-app usage metrics tied to a
-      randomly
-      generated Firebase Instance ID (not your name, email, or pilgrim ID). Specifically: screens viewed (e.g., Home,
-      Prayers,
-      Qibla), in-app events (e.g., login, complaint submitted, evaluation completed, certificate viewed), session
-      duration,
-      app version, device model and OS version, country (derived from IP — the IP itself is not stored), and language
-      setting.
-      Firebase Analytics does <strong>not</strong> collect the contents of complaints or messages, your name, email,
-      password,
-      National or Saudi ID, or precise GPS coordinates.
+      <strong>Firebase Analytics (Google LLC)</strong> — in-app usage events tied to a randomly generated
+      Firebase Instance ID and, once you log in, to your <strong>internal account ID</strong> (an opaque
+      server-side identifier — never your name, email, phone, password, or National/Saudi ID).
+      We also set the following <em>user properties</em> for segmentation: gender, your Hajj group name,
+      your master group name, and your travel office name.
+      Specifically we log: screens viewed (e.g., Home, Prayers, Qibla), in-app events (e.g., login,
+      complaint submitted, evaluation completed, certificate viewed), session duration, app version,
+      device model and OS version, country (derived from IP — the IP itself is not stored by us), and
+      language setting.
+      Firebase Analytics does <strong>not</strong> collect the contents of complaints or messages, your
+      name, email, password, National/Saudi ID, pilgrim barcode, or precise GPS coordinates.
+      Advertising ID (AAID) and Android ID (SSAID) collection by Firebase are <strong>explicitly
+      disabled</strong> in our app configuration.
+    </li>
+    <li>
+      <strong>App version verification:</strong> At startup (at most once per session), the App contacts
+      our servers to fetch the minimum required version number. This request contains
+      <strong>no personal data</strong> — only standard HTTPS headers are sent. The response (a JSON
+      object with the required version and build number) is processed entirely on-device. If your
+      installed version is outdated, a mandatory update notice is shown; otherwise no action is taken.
     </li>
   </ul>
 
@@ -175,7 +190,8 @@
     </tr>
     <tr>
       <td>Precise &amp; approximate location</td>
-      <td>Prayer time calculation, Qibla direction (real-time, on-device only)</td>
+      <td>Prayer time calculation and Qibla direction (real-time, on-device only); one-time
+        transmission to our servers only when you explicitly tap "Send Help"</td>
       <td>Consent (permission granted by you)</td>
     </tr>
     <tr>
@@ -208,6 +224,12 @@
       <td>Technical support and compatibility</td>
       <td>Legitimate interest</td>
     </tr>
+    <tr>
+      <td>App version (local vs. server-required)</td>
+      <td>Detecting outdated installations that require a mandatory update to maintain service security
+        and functionality</td>
+      <td>Legitimate interest</td>
+    </tr>
   </table>
 
   <hr>
@@ -218,7 +240,10 @@
   <ul>
     <li><strong>Account data:</strong> Retained while your account is active. Upon deletion request, data is removed
       within 30 days unless legal retention is required.</li>
-    <li><strong>Location data:</strong> Never stored on servers — used only in real-time on-device.</li>
+    <li><strong>Location data:</strong> Not stored on our servers for prayer times or Qibla — used only
+      in real-time on-device. If you use the "Send Help" feature, the single GPS coordinate transmitted
+      is retained on our servers only as long as the emergency case is open and is deleted with the
+      case record.</li>
     <li><strong>Complaint images and text:</strong> Retained while the complaint is open; deleted after resolution or
       within 90 days.</li>
     <li><strong>Training and activity data:</strong> Retained while your account is active; deleted with account
@@ -233,7 +258,8 @@
     <li>Credentials stored in Android Keystore / iOS Keychain</li>
     <li>App preferences cached locally using SharedPreferences / UserDefaults (no sensitive personal data)</li>
     <li>Certificates and images may be saved to your device's photo library with your permission (Android:
-      <code>WRITE_EXTERNAL_STORAGE</code> / iOS: <code>NSPhotoLibraryAddUsageDescription</code>)</li>
+      <code>WRITE_EXTERNAL_STORAGE</code> / iOS: <code>NSPhotoLibraryAddUsageDescription</code>)
+    </li>
   </ul>
 
   <h3>Server-Side Security</h3>
@@ -248,7 +274,13 @@
   <h2>5. Data Sharing</h2>
   <ul>
     <li><strong>Your Hajj group / travel office:</strong> Name, phone number, barcode, and group data shared as needed
-      to manage your pilgrimage group.</li>
+      to manage your pilgrimage group. If you use "Send Help", your one-time GPS location and pilgrim
+      ID are also forwarded to your group / travel office so they can assist you.</li>
+    <li><strong>Authorized administrative staff (admin management):</strong> Designated staff from your
+      Hajj management organization or travel office may, within the scope of their official role,
+      access your pilgrim profile, complaint records, evaluation results, and training progress through
+      a protected administrative panel. All administrative access is role-restricted and access-controlled.
+      Admins do <strong>not</strong> have access to your password (which is never stored in plain text).</li>
     <li><strong>Firebase Cloud Messaging (Google LLC):</strong> Your FCM device token is shared with Firebase solely to
       deliver push notifications. Firebase does not use this for advertising or profiling.</li>
     <li><strong>Firebase Analytics (Google LLC):</strong> Aggregated, pseudonymous usage events are sent to Google as
@@ -437,8 +469,9 @@
       <td>ACCESS_FINE_LOCATION</td>
       <td>Android</td>
       <td>Optional (user grant)</td>
-      <td>Precise prayer time calculation and Qibla compass direction (real-time only)</td>
-      <td>No — on-device only</td>
+      <td>Precise prayer time calculation, Qibla compass direction, and one-time location share via
+        "Send Help"</td>
+      <td>Only when "Send Help" is tapped</td>
     </tr>
     <tr>
       <td>ACCESS_COARSE_LOCATION</td>
@@ -451,8 +484,8 @@
       <td>NSLocationWhenInUseUsageDescription</td>
       <td>iOS</td>
       <td>Optional (user grant)</td>
-      <td>Prayer time calculation and Qibla direction (real-time only)</td>
-      <td>No — on-device only</td>
+      <td>Prayer time calculation, Qibla direction, and one-time location share via "Send Help"</td>
+      <td>Only when "Send Help" is tapped</td>
     </tr>
     <tr>
       <td>CAMERA / NSCameraUsageDescription</td>
@@ -530,7 +563,7 @@
 
   <hr>
 
-  <p><em>Last updated: May 2, 2026</em></p>
+  <p><em>Last updated: May 12, 2026</em></p>
 
 </body>
 
