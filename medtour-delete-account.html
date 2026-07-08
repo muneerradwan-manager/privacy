@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedTour — Delete Your Account &amp; Data</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1f2b;
+      --muted: #5b6472;
+      --accent: #0b7c74;
+      --border: #e3e7ec;
+      --card: #f7f9fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 22px 80px;
+    }
+
+    header {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 36px 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    p,
+    li {
+      color: var(--fg);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      position: relative;
+      padding: 4px 0 4px 46px;
+      margin: 14px 0;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff !important;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 15px;
+      display: block;
+      overflow-x: auto;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--card);
+      font-weight: 600;
+    }
+
+    code {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12151b;
+        --fg: #e7ebf0;
+        --muted: #9aa4b2;
+        --accent: #2fb3a7;
+        --border: #2a2f3a;
+        --card: #1a1e26;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Delete Your Account &amp; Data</h1>
+      <p class="sub"><strong>MedTour</strong> &nbsp;·&nbsp; Package: <code>com.mar.medtour</code></p>
+    </header>
+
+    <p>
+      This page explains how to request deletion of your <strong>MedTour</strong> account and the personal
+      data associated with it. It applies to the MedTour app developed and operated by the MedTour team
+      (<a href="https://medtour-sy.com">medtour-sy.com</a>).
+    </p>
+
+    <h2>How to request account deletion</h2>
+    <p>To request that your account and associated data be deleted, follow these steps:</p>
+    <ol class="steps">
+      <li>Send an email to <a
+          href="mailto:support@medtour-sy.com?subject=Account%20Deletion%20Request">support@medtour-sy.com</a> from the
+        email address linked to your MedTour account.</li>
+      <li>Use the subject line <strong>"Account Deletion Request"</strong>.</li>
+      <li>Include the <strong>full name</strong> and <strong>phone number</strong> registered on your account so we can
+        verify your identity.</li>
+      <li>We will verify your request and delete your account. You will receive a confirmation email once the deletion
+        is complete.</li>
+    </ol>
+
+    <p style="text-align:center">
+      <a class="btn"
+        href="mailto:support@medtour-sy.com?subject=Account%20Deletion%20Request&amp;body=I%20request%20deletion%20of%20my%20MedTour%20account.%0A%0AFull%20name:%0ARegistered%20phone%20number:">Request
+        account deletion by email</a>
+    </p>
+
+    <div class="card">
+      <strong>Timeline:</strong> We process verified deletion requests within <strong>30 days</strong>.
+      Once your request is verified, your account is deactivated immediately and your personal data is
+      permanently deleted within this period.
+    </div>
+
+    <h2>What data is deleted</h2>
+    <p>When your account is deleted, we permanently remove the following personal data:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Deleted</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account information</td>
+          <td>Name, email address, phone number, and password.</td>
+        </tr>
+        <tr>
+          <td>Profile data</td>
+          <td>Profile photo and any details you added to your profile.</td>
+        </tr>
+        <tr>
+          <td>User content</td>
+          <td>Reviews, ratings, favorites, orders/bookings, messages, and images or documents you uploaded.</td>
+        </tr>
+        <tr>
+          <td>Listings you manage</td>
+          <td>Any medical center, hotel, or car-agency listing tied to your account, including its addresses, photos,
+            and location.</td>
+        </tr>
+        <tr>
+          <td>Device identifiers</td>
+          <td>Your push-notification (FCM) token and associated device records.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What data may be kept</h2>
+    <p>We may retain limited information after deletion only where required:</p>
+    <ul>
+      <li><strong>Legal &amp; financial records</strong> — transaction or invoice records that we are legally required
+        to keep may be retained for the period required by applicable law, then deleted.</li>
+      <li><strong>Backups</strong> — residual copies in encrypted backups are purged on our normal backup rotation (no
+        longer than <strong>90 days</strong>).</li>
+      <li><strong>Anonymized data</strong> — aggregated data that can no longer identify you may be retained for
+        analytics and service improvement.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <p>
+      If you have any questions about deleting your account or data, contact us at
+      <a href="mailto:support@medtour-sy.com">support@medtour-sy.com</a>.
+      For full details on how we handle your data, see our
+      <a href="https://medtour-sy.com/privacy-policy.html">Privacy Policy</a>.
+    </p>
+
+    <footer>
+      © 2026 MedTour. All rights reserved.
+    </footer>
+  </div>
+</body>
+
+</html>
